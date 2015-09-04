@@ -35,7 +35,8 @@ class DataService: NSObject {
   }
   
   func currentNumberSteps()->Int{
-    return 1000
+    
+    var steps = Int(arc4random_uniform(10000))
+    return steps
   }
- 
 }
