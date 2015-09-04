@@ -4,20 +4,20 @@ provides:
 nominals:
 - "C11FeedMeTests11FeedMeTests"
 class-members:
-- "testExample"
+- "tearDown"
 - "setUp"
 - "testPerformanceExample"
-- "tearDown"
+- "testExample"
 top-level:
 - !private "XCTAssert"
 - !private "StringLiteralType"
 - "XCTestCase"
 - !private "BooleanLiteralType"
 member-access:
-- "PSs9AnyObject"
+- "CSo8NSObject"
 - "CSo10XCTestCase"
 - "CSo6XCTest"
-- "CSo8NSObject"
+- "PSs9AnyObject"
 - !private "C11FeedMeTests11FeedMeTests"
 dynamic-lookup:
 cross-module:

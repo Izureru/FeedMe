@@ -4,24 +4,25 @@ provides:
 nominals:
 - "C6FeedMe21MealItemTableViewCell"
 class-members:
-- "TitleLabel"
-- "setSelected"
-- "InfoLabel"
-- "NutritionLabel"
-- "awakeFromNib"
+- "infoTextView"
 - "MealItemImageView"
+- "TitleLabel"
+- "awakeFromNib"
+- "setSelected"
+- "NutritionLabel"
 top-level:
-- "UILabel"
-- "Bool"
 - "UIImageView"
 - "UITableViewCell"
+- "UILabel"
+- "UITextView"
+- "Bool"
 member-access:
-- "CSo15UITableViewCell"
 - "PSs9AnyObject"
-- "CSo8NSObject"
-- "CSo11UIResponder"
-- "C6FeedMe21MealItemTableViewCell"
 - "CSo6UIView"
+- "CSo8NSObject"
+- "C6FeedMe21MealItemTableViewCell"
+- "CSo15UITableViewCell"
+- "CSo11UIResponder"
 dynamic-lookup:
 cross-module:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/32/Swift.swiftmodule"

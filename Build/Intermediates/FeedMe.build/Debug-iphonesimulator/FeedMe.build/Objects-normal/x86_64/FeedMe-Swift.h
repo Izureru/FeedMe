@@ -84,6 +84,9 @@ typedef struct _NSZone NSZone;
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import ObjectiveC;
+@import CoreGraphics;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -104,12 +107,119 @@ SWIFT_CLASS("_TtC6FeedMe11AppDelegate")
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITapGestureRecognizer;
-@class UIImageView;
+@class Meal;
+@class NSData;
+
+SWIFT_CLASS("_TtC6FeedMe11DataService")
+@interface DataService : NSObject
++ (DataService * __nonnull)sharedInstance;
+- (NSArray * __nonnull)getMeals:(NSInteger)steps;
+- (NSArray * __nonnull)parseJson:(NSData * __nonnull)JsonData;
+- (void)checkTime;
+- (NSInteger)currentNumberSteps;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC6FeedMe4Meal")
+@interface Meal : NSObject
+@property (nonatomic, copy) NSString * __nullable imageStr;
+@property (nonatomic, copy) NSString * __nullable mealId;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC6FeedMe8MealItem")
+@interface MealItem : NSObject
+@property (nonatomic, copy) NSString * __nullable mealId;
+@property (nonatomic, copy) NSString * __nullable name;
+@property (nonatomic, copy) NSString * __nullable info;
+@property (nonatomic, copy) NSString * __nullable imageStr;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UILabel;
-@class UIScrollView;
-@class NSBundle;
+@class UIImageView;
+@class UITextView;
 @class NSCoder;
+
+SWIFT_CLASS("_TtC6FeedMe21MealItemTableViewCell")
+@interface MealItemTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified TitleLabel;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified NutritionLabel;
+@property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified MealItemImageView;
+@property (nonatomic, weak) IBOutlet UITextView * __null_unspecified infoTextView;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * __nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIView;
+@class UITableView;
+@class NSIndexPath;
+@class UIStoryboardSegue;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC6FeedMe23MealTableViewController")
+@interface MealTableViewController : UITableViewController
+@property (nonatomic) UIView * __nullable footerView;
+@property (nonatomic) UILabel * __nullable totalLabel;
+@property (nonatomic) Meal * __nullable meal;
+@property (nonatomic, copy) NSArray * __nullable mealItems;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)didReceiveMemoryWarning;
+- (CGFloat)tableView:(UITableView * __nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (CGFloat)tableView:(UITableView * __nonnull)tableView heightForFooterInSection:(NSInteger)section;
+- (UIView * __nullable)tableView:(UITableView * __nonnull)tableView viewForFooterInSection:(NSInteger)section;
+- (void)updatePriceLabel:(NSInteger)price;
+- (void)prepareForSegue:(UIStoryboardSegue * __nonnull)segue sender:(id __nullable)sender;
+- (NSArray * __nonnull)jsonParsing;
+- (NSArray * __nonnull)mealItemsForId:(NSArray * __nonnull)items mealId:(NSString * __nonnull)mealId;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithNibName:(NSString * __null_unspecified)nibNameOrNil bundle:(NSBundle * __null_unspecified)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithCoder:(NSCoder * __null_unspecified)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIButton;
+
+SWIFT_CLASS("_TtC6FeedMe8MealView")
+@interface MealView : UIView
+@property (nonatomic) UIImageView * __nullable imageView;
+@property (nonatomic) UIButton * __nullable button;
+@property (nonatomic) Meal * __nullable meal;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame target:(id __nonnull)target selectorName:(SEL __null_unspecified)selectorName OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface NSDate (SWIFT_EXTENSION(FeedMe))
+@end
+
+
+@interface NSDate (SWIFT_EXTENSION(FeedMe))
+@end
+
+
+@interface NSDate (SWIFT_EXTENSION(FeedMe))
+
+/// This adds a new method dateAt to NSDate.
+///
+/// It returns a new date at the specified hours and minutes of the receiver
+///
+/// \param hours: The hours value
+///
+/// \param minutes: The new minutes
+///
+/// \returns a new NSDate with the same year/month/day as the receiver, but with the specified hours/minutes values
+- (NSDate * __nonnull)dateAtHours:(NSInteger)hours minutes:(NSInteger)minutes;
+@end
+
+@class NSTimer;
+@class UIScrollView;
 
 SWIFT_CLASS("_TtC6FeedMe14ViewController")
 @interface ViewController : UIViewController <UIScrollViewDelegate>
@@ -117,12 +227,20 @@ SWIFT_CLASS("_TtC6FeedMe14ViewController")
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified timeLabel;
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified stepsLabel;
 @property (nonatomic, weak) IBOutlet UIScrollView * __null_unspecified mealScrollView;
-- (IBAction)eatAction:(id __nonnull)sender;
+@property (nonatomic) NSTimer * __nullable timer;
+@property (nonatomic, copy) NSArray * __nonnull mealViews;
+@property (nonatomic) Meal * __nullable selectedMeal;
 - (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
+- (void)updateTime;
 - (void)didReceiveMemoryWarning;
+- (void)clearScrolView;
 - (void)setupScrollView;
-- (void)mealPageButtonAction:(UITapGestureRecognizer * __nonnull)sender;
-- (void)performSegueWithIdentifier:(NSString * __nullable)identifier sender:(id __nullable)sender;
+- (void)mealPageButtonAction:(id __nonnull)sender;
+- (IBAction)eatAction:(id __nonnull)sender;
+- (void)jsonParsing;
+- (void)prepareForSegue:(UIStoryboardSegue * __nonnull)segue sender:(id __nullable)sender;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

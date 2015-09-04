@@ -4,27 +4,27 @@ provides:
 nominals:
 - "C6FeedMe11AppDelegate"
 class-members:
-- "applicationDidBecomeActive"
-- "applicationWillTerminate"
 - "applicationWillResignActive"
 - "applicationDidEnterBackground"
-- "application"
 - "applicationWillEnterForeground"
+- "application"
 - "window"
+- "applicationWillTerminate"
+- "applicationDidBecomeActive"
 top-level:
-- "AnyObject"
-- !private "BooleanLiteralType"
-- "UIApplication"
-- "Bool"
+- "UIResponder"
 - "NSObject"
 - "UIWindow"
-- "UIResponder"
+- !private "BooleanLiteralType"
+- "Bool"
+- "UIApplication"
 - "UIApplicationDelegate"
+- "AnyObject"
 member-access:
-- "PSo21UIApplicationDelegate"
-- "CSo11UIResponder"
-- "C6FeedMe11AppDelegate"
 - "PSs9AnyObject"
+- "PSo21UIApplicationDelegate"
+- "C6FeedMe11AppDelegate"
+- "CSo11UIResponder"
 - "CSo8NSObject"
 dynamic-lookup:
 cross-module:
