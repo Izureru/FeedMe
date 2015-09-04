@@ -1,0 +1,8 @@
+version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
+options: "e62a3527cacaf24507ac019f4fa860be"
+inputs: 
+- "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/Models/Meal.swift"
+- "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/Cells/MealItemTableViewCell.swift"
+- "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/ViewController.swift"
+- "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/MealTableViewController.swift"
+- "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/AppDelegate.swift"

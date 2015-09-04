@@ -1,0 +1,79 @@
+//
+//  MealTableViewController.swift
+//  FeedMe
+//
+//  Created by Izureru on 04/09/2015.
+//  Copyright (c) 2015 Marks and Spencer. All rights reserved.
+//
+
+import UIKit
+
+class MealTableViewController: UITableViewController {
+
+  var footerView:UIView?
+  var totalLabel:UILabel?
+  
+    override func viewDidLoad() {
+        super.viewDidLoad()
+      // change me when you can
+        title = "Meal"
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    // MARK: - Table view data source
+
+  
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+      return 200
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return 3
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("mealItemCell", forIndexPath: indexPath) as! UITableViewCell
+
+        return cell
+    }
+  
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+      return 50
+    }
+  
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+      if(footerView == nil)
+      {
+        footerView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 50))
+        footerView!.backgroundColor = UIColor.redColor()
+      
+        totalLabel = UILabel(frame: CGRectMake(0, 0, self.view.frame.width, 50))
+        totalLabel?.text = "£0.00"
+        totalLabel?.textAlignment = NSTextAlignment.Center
+        totalLabel?.font = UIFont.boldSystemFontOfSize(15)
+        totalLabel?.textColor = UIColor.whiteColor()
+        
+        footerView!.addSubview(totalLabel!)
+      }
+      
+      return footerView
+    }
+  
+  
+    func updatePriceLabel(price: Int){
+        totalLabel?.text = NSString(format: "£%.2d", price) as String
+    }
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+    }
+
+
+}

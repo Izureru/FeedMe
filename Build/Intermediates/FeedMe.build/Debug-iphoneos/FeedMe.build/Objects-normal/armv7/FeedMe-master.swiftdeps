@@ -1,0 +1,5 @@
+version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
+options: "9d8952caae89427285aabdffa5f5e0cb"
+inputs: 
+- "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/ViewController.swift"
+- "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/AppDelegate.swift"
