@@ -86,6 +86,7 @@ typedef struct _NSZone NSZone;
 @import UIKit;
 @import ObjectiveC;
 @import CoreGraphics;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -106,9 +107,25 @@ SWIFT_CLASS("_TtC6FeedMe11AppDelegate")
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class Meal;
+@class NSData;
+
+SWIFT_CLASS("_TtC6FeedMe11DataService")
+@interface DataService : NSObject
++ (DataService * __nonnull)sharedInstance;
+- (NSArray * __nonnull)getMeals:(NSInteger)steps;
+- (NSArray * __nonnull)parseJson:(NSData * __nonnull)JsonData;
+- (void)checkTime;
+- (NSInteger)currentNumberSteps;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC6FeedMe4Meal")
 @interface Meal : NSObject
+@property (nonatomic, copy) NSString * __nullable name;
+@property (nonatomic, copy) NSString * __nullable info;
+@property (nonatomic, copy) NSString * __nullable imageStr;
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -152,6 +169,30 @@ SWIFT_CLASS("_TtC6FeedMe23MealTableViewController")
 - (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithCoder:(NSCoder * __null_unspecified)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+@interface NSDate (SWIFT_EXTENSION(FeedMe))
+@end
+
+
+@interface NSDate (SWIFT_EXTENSION(FeedMe))
+@end
+
+
+@interface NSDate (SWIFT_EXTENSION(FeedMe))
+
+/// This adds a new method dateAt to NSDate.
+///
+/// It returns a new date at the specified hours and minutes of the receiver
+///
+/// \param hours: The hours value
+///
+/// \param minutes: The new minutes
+///
+/// \returns a new NSDate with the same year/month/day as the receiver, but with the specified hours/minutes values
+- (NSDate * __nonnull)dateAtHours:(NSInteger)hours minutes:(NSInteger)minutes;
+@end
+
+@class NSTimer;
 @class UIScrollView;
 
 SWIFT_CLASS("_TtC6FeedMe14ViewController")
@@ -160,11 +201,16 @@ SWIFT_CLASS("_TtC6FeedMe14ViewController")
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified timeLabel;
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified stepsLabel;
 @property (nonatomic, weak) IBOutlet UIScrollView * __null_unspecified mealScrollView;
-- (IBAction)eatAction:(id __nonnull)sender;
+@property (nonatomic) NSTimer * __nullable timer;
+@property (nonatomic, copy) NSArray * __nonnull mealViews;
 - (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
+- (void)updateTime;
 - (void)didReceiveMemoryWarning;
 - (void)setupScrollView;
 - (void)mealPageButtonAction;
+- (IBAction)eatAction:(id __nonnull)sender;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

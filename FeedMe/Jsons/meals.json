@@ -1,0 +1,17 @@
+[
+	{
+		"image": "meal1",
+		"mealId": "0001",
+		"mealType": "breakfast"
+	},
+	{
+		"image": "meal2",
+		"mealId": "0002",
+		"mealType": "lunch"
+	},
+	{
+		"image": "meal3",
+		"mealId": "0003",
+		"mealType": "dinner"
+	}
+]
