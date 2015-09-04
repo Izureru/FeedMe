@@ -205,6 +205,16 @@ SWIFT_CLASS("_TtC6FeedMe8MealView")
 
 
 @interface NSDate (SWIFT_EXTENSION(FeedMe))
+
+/// This adds a new method dateAt to NSDate.
+///
+/// It returns a new date at the specified hours and minutes of the receiver
+///
+/// \param hours: The hours value
+///
+/// \param minutes: The new minutes
+///
+/// \returns a new NSDate with the same year/month/day as the receiver, but with the specified hours/minutes values
 - (NSDate * __nonnull)dateAtHours:(NSInteger)hours minutes:(NSInteger)minutes;
 @end
 
