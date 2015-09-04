@@ -15,15 +15,36 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var stepsLabel: UILabel!
   @IBOutlet weak var mealScrollView: UIScrollView!
-  
-  @IBAction func eatAction(sender: AnyObject) {
-  }
+  var timer:NSTimer?
+  var mealViews:[UIView] = [UIView]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "Feed Me"
     setupScrollView()
     profileImageView.image = UIImage(named: "bepo")
-    // Do any additional setup after loading the view, typically from a nib.
+    profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
+    profileImageView.clipsToBounds = true
+    self.timeLabel.text = todaysDateString()
+
+    self.stepsLabel.text = "Steps: " + String(stringInterpolationSegment: DataService.sharedInstance.currentNumberSteps())
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    if (timer == nil)
+    {
+      timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "updateTime", userInfo: nil, repeats: true)
+      timer?.fire()
+    }
+  }
+  
+  override func viewDidDisappear(animated: Bool) {
+    timer?.invalidate()
+  }
+  
+  func updateTime()
+  {
+    self.timeLabel.text = todaysDateString()
   }
 
   override func didReceiveMemoryWarning() {
@@ -35,9 +56,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     let width = self.view.frame.width
     mealScrollView.contentSize = CGSizeMake(width * 3, 0)
     for(var i = 0; i<3;i++){
-
-        var view = UIView(frame: CGRectMake(width * CGFloat(i), 0, width, mealScrollView.frame.height))
-        var button = UIButton(frame: CGRectMake(0, 0, width, mealScrollView.frame.height))
+        var view = UIView(frame: CGRectMake(width * CGFloat(i), 0, width, mealScrollView.bounds.height))
+        var button = UIButton(frame: CGRectMake(0, 0, width, mealScrollView.bounds.height))
         button.setTitle("BUTTON", forState: UIControlState.Normal )
         button.addTarget(self, action: "mealPageButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
         view.addSubview(button)
@@ -47,14 +67,20 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         else{
           view.backgroundColor = UIColor.yellowColor()
         }
+        self.mealViews.append(view)
         mealScrollView.addSubview(view)
-      
     }
   }
-
   
   func mealPageButtonAction() {
-      self.performSegueWithIdentifier("eatingSegue", sender: self)
+    self.performSegueWithIdentifier("eatingSegue", sender: self)
+  }
+  
+  @IBAction func eatAction(sender: AnyObject) {
+    var page = mealScrollView.contentOffset.x / mealScrollView.frame.size.width
+    
+    
+    
   }
   
 }

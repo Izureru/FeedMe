@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A6CF1991B99A40C001F32C7 /* NSDate+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6CF1981B99A40C001F32C7 /* NSDate+Ex.swift */; };
+		3ACFD2451B99A23B00A81C09 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD2441B99A23B00A81C09 /* DataService.swift */; };
 		9473BBD91B98A279008E2D2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473BBD81B98A279008E2D2E /* AppDelegate.swift */; };
 		9473BBDB1B98A279008E2D2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473BBDA1B98A279008E2D2E /* ViewController.swift */; };
 		9473BBDE1B98A279008E2D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9473BBDC1B98A279008E2D2E /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A6CF1981B99A40C001F32C7 /* NSDate+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+Ex.swift"; path = "Extensions/NSDate+Ex.swift"; sourceTree = "<group>"; };
+		3ACFD2441B99A23B00A81C09 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = Services/DataService.swift; sourceTree = "<group>"; };
 		9473BBD31B98A279008E2D2E /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9473BBD71B98A279008E2D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9473BBD81B98A279008E2D2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3ACFD2431B99A22700A81C09 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3ACFD2441B99A23B00A81C09 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		3ACFD2461B99A2FB00A81C09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A6CF1981B99A40C001F32C7 /* NSDate+Ex.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		9473BBCA1B98A279008E2D2E = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				9473BC001B99AE73008E2D2E /* Jsons */,
+				3ACFD2461B99A2FB00A81C09 /* Extensions */,
+				3ACFD2431B99A22700A81C09 /* Services */,
 				9473BBFD1B99A013008E2D2E /* Models */,
 				9473BBF81B99997D008E2D2E /* Cells */,
 				9473BBD81B98A279008E2D2E /* AppDelegate.swift */,
@@ -256,6 +278,8 @@
 				9473BBFF1B99A02C008E2D2E /* Meal.swift in Sources */,
 				9473BBFA1B9999AA008E2D2E /* MealItemTableViewCell.swift in Sources */,
 				9473BBDB1B98A279008E2D2E /* ViewController.swift in Sources */,
+				3A6CF1991B99A40C001F32C7 /* NSDate+Ex.swift in Sources */,
+				3ACFD2451B99A23B00A81C09 /* DataService.swift in Sources */,
 				9473BBFC1B999B3D008E2D2E /* MealTableViewController.swift in Sources */,
 				9473BBD91B98A279008E2D2E /* AppDelegate.swift in Sources */,
 			);
@@ -455,6 +479,7 @@
 				9473BBF41B98A27A008E2D2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9473BBF51B98A27A008E2D2E /* Build configuration list for PBXNativeTarget "FeedMeTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +488,7 @@
 				9473BBF71B98A27A008E2D2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

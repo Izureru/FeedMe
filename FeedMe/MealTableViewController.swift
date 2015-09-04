@@ -50,11 +50,13 @@ class MealTableViewController: UITableViewController {
       if(footerView == nil)
       {
         footerView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 50))
-        footerView!.backgroundColor = UIColor.redColor()
-      
+        footerView!.backgroundColor = UIColor(red: (77/255), green: (150/255), blue: (122/255), alpha: 1.0)
+        
+
         totalLabel = UILabel(frame: CGRectMake(0, 0, self.view.frame.width, 50))
         totalLabel?.text = "£0.00"
         totalLabel?.textAlignment = NSTextAlignment.Center
+        totalLabel?.backgroundColor = UIColor.clearColor()
         totalLabel?.font = UIFont.boldSystemFontOfSize(15)
         totalLabel?.textColor = UIColor.whiteColor()
         
