@@ -57,8 +57,5 @@ class ViewController: UIViewController, UIScrollViewDelegate {
       self.performSegueWithIdentifier("eatingSegue", sender: self)
   }
   
-  
-    
-  
 }
 

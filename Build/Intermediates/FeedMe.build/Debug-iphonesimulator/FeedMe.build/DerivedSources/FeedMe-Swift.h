@@ -109,6 +109,9 @@ SWIFT_CLASS("_TtC6FeedMe11AppDelegate")
 
 SWIFT_CLASS("_TtC6FeedMe4Meal")
 @interface Meal : NSObject
+@property (nonatomic, copy) NSString * __nullable name;
+@property (nonatomic, copy) NSString * __nullable info;
+@property (nonatomic, copy) NSString * __nullable imageStr;
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

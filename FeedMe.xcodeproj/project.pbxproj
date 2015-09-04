@@ -16,6 +16,8 @@
 		9473BBFA1B9999AA008E2D2E /* MealItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473BBF91B9999AA008E2D2E /* MealItemTableViewCell.swift */; };
 		9473BBFC1B999B3D008E2D2E /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473BBFB1B999B3D008E2D2E /* MealTableViewController.swift */; };
 		9473BBFF1B99A02C008E2D2E /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473BBFE1B99A02C008E2D2E /* Meal.swift */; };
+		9473BC031B99AE73008E2D2E /* mealItems.json in Resources */ = {isa = PBXBuildFile; fileRef = 9473BC011B99AE73008E2D2E /* mealItems.json */; };
+		9473BC041B99AE73008E2D2E /* meals.json in Resources */ = {isa = PBXBuildFile; fileRef = 9473BC021B99AE73008E2D2E /* meals.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		9473BBF91B9999AA008E2D2E /* MealItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealItemTableViewCell.swift; path = Cells/MealItemTableViewCell.swift; sourceTree = "<group>"; };
 		9473BBFB1B999B3D008E2D2E /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 		9473BBFE1B99A02C008E2D2E /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Meal.swift; path = Models/Meal.swift; sourceTree = "<group>"; };
+		9473BC011B99AE73008E2D2E /* mealItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mealItems.json; sourceTree = "<group>"; };
+		9473BC021B99AE73008E2D2E /* meals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meals.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		9473BBD51B98A279008E2D2E /* FeedMe */ = {
 			isa = PBXGroup;
 			children = (
+				9473BC001B99AE73008E2D2E /* Jsons */,
 				9473BBFD1B99A013008E2D2E /* Models */,
 				9473BBF81B99997D008E2D2E /* Cells */,
 				9473BBD81B98A279008E2D2E /* AppDelegate.swift */,
@@ -135,6 +140,15 @@
 				9473BBFE1B99A02C008E2D2E /* Meal.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		9473BC001B99AE73008E2D2E /* Jsons */ = {
+			isa = PBXGroup;
+			children = (
+				9473BC011B99AE73008E2D2E /* mealItems.json */,
+				9473BC021B99AE73008E2D2E /* meals.json */,
+			);
+			path = Jsons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,8 +232,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9473BBDE1B98A279008E2D2E /* Main.storyboard in Resources */,
+				9473BC041B99AE73008E2D2E /* meals.json in Resources */,
 				9473BBE31B98A279008E2D2E /* LaunchScreen.xib in Resources */,
 				9473BBE01B98A279008E2D2E /* Images.xcassets in Resources */,
+				9473BC031B99AE73008E2D2E /* mealItems.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

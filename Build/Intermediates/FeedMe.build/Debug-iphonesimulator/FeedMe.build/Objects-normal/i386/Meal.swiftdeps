@@ -4,11 +4,17 @@ provides:
 nominals:
 - "C6FeedMe4Meal"
 class-members:
+- "info"
+- "imageStr"
+- "name"
 top-level:
+- "String"
 - "NSObject"
+- "Int"
 member-access:
-- "CSo8NSObject"
 - "PSs9AnyObject"
+- "C6FeedMe4Meal"
+- "CSo8NSObject"
 dynamic-lookup:
 cross-module:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/32/Swift.swiftmodule"
