@@ -4,20 +4,20 @@ provides:
 nominals:
 - "C6FeedMe11DataService"
 class-members:
-- "checkTime"
 - "parseJson"
-- "currentNumberSteps"
 - "sharedInstance"
+- "currentNumberSteps"
 - "getMeals"
+- "checkTime"
 top-level:
 - "NSObject"
 - "Int"
-- "DataService"
 - "NSData"
+- "DataService"
 - "Meal"
 member-access:
-- "CSo8NSObject"
 - "C6FeedMe11DataService"
+- "CSo8NSObject"
 - "PSs9AnyObject"
 - !private "Sa"
 dynamic-lookup:

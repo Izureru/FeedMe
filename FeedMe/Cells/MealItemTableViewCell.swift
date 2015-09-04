@@ -12,9 +12,10 @@ class MealItemTableViewCell: UITableViewCell {
 
   @IBOutlet weak var TitleLabel: UILabel!
   @IBOutlet weak var NutritionLabel: UILabel!
-  @IBOutlet weak var InfoLabel: UILabel!
   @IBOutlet weak var MealItemImageView: UIImageView!
  
+  @IBOutlet weak var infoTextView: UITextView!
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +26,6 @@ class MealItemTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+  
 
 }

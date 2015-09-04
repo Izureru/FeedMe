@@ -10,6 +10,7 @@ import UIKit
 
 class MealItem: NSObject {
   
+  var mealId:String?
     var name:String?
     var info:String?
     var imageStr:String?
