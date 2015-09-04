@@ -131,6 +131,7 @@ SWIFT_CLASS("_TtC6FeedMe4Meal")
 
 SWIFT_CLASS("_TtC6FeedMe8MealItem")
 @interface MealItem : NSObject
+@property (nonatomic, copy) NSString * __nullable mealId;
 @property (nonatomic, copy) NSString * __nullable name;
 @property (nonatomic, copy) NSString * __nullable info;
 @property (nonatomic, copy) NSString * __nullable imageStr;
@@ -139,14 +140,15 @@ SWIFT_CLASS("_TtC6FeedMe8MealItem")
 
 @class UILabel;
 @class UIImageView;
+@class UITextView;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC6FeedMe21MealItemTableViewCell")
 @interface MealItemTableViewCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified TitleLabel;
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified NutritionLabel;
-@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified InfoLabel;
 @property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified MealItemImageView;
+@property (nonatomic, weak) IBOutlet UITextView * __null_unspecified infoTextView;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * __nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
@@ -164,6 +166,7 @@ SWIFT_CLASS("_TtC6FeedMe23MealTableViewController")
 @property (nonatomic) UIView * __nullable footerView;
 @property (nonatomic) UILabel * __nullable totalLabel;
 @property (nonatomic) Meal * __nullable meal;
+@property (nonatomic, copy) NSArray * __nullable mealItems;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
@@ -174,6 +177,8 @@ SWIFT_CLASS("_TtC6FeedMe23MealTableViewController")
 - (UIView * __nullable)tableView:(UITableView * __nonnull)tableView viewForFooterInSection:(NSInteger)section;
 - (void)updatePriceLabel:(NSInteger)price;
 - (void)prepareForSegue:(UIStoryboardSegue * __nonnull)segue sender:(id __nullable)sender;
+- (NSArray * __nonnull)jsonParsing;
+- (NSArray * __nonnull)mealItemsForId:(NSArray * __nonnull)items mealId:(NSString * __nonnull)mealId;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithNibName:(NSString * __null_unspecified)nibNameOrNil bundle:(NSBundle * __null_unspecified)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithCoder:(NSCoder * __null_unspecified)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -220,6 +225,7 @@ SWIFT_CLASS("_TtC6FeedMe14ViewController")
 - (void)viewDidDisappear:(BOOL)animated;
 - (void)updateTime;
 - (void)didReceiveMemoryWarning;
+- (void)clearScrolView;
 - (void)setupScrollView;
 - (void)mealPageButtonAction:(id __nonnull)sender;
 - (IBAction)eatAction:(id __nonnull)sender;
