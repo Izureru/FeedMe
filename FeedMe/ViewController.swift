@@ -27,7 +27,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     profileImageView.clipsToBounds = true
     self.timeLabel.text = todaysDateString()
 
-    self.stepsLabel.text = "Steps: " + String(stringInterpolationSegment: DataService.sharedInstance.currentNumberSteps())
+    HealthKit().recentSteps() { steps, error in
+      self.stepsLabel.text = "Steps: " + String(stringInterpolationSegment: steps)
+    }
   }
   
   override func viewDidAppear(animated: Bool) {
