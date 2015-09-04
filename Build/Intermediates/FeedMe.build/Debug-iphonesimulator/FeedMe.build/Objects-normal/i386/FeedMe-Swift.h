@@ -123,6 +123,14 @@ SWIFT_CLASS("_TtC6FeedMe11DataService")
 
 SWIFT_CLASS("_TtC6FeedMe4Meal")
 @interface Meal : NSObject
+@property (nonatomic, copy) NSString * __nullable imageStr;
+@property (nonatomic, copy) NSString * __nullable mealId;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC6FeedMe8MealItem")
+@interface MealItem : NSObject
 @property (nonatomic, copy) NSString * __nullable name;
 @property (nonatomic, copy) NSString * __nullable info;
 @property (nonatomic, copy) NSString * __nullable imageStr;
@@ -169,8 +177,15 @@ SWIFT_CLASS("_TtC6FeedMe23MealTableViewController")
 - (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithCoder:(NSCoder * __null_unspecified)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIButton;
 
-@interface NSDate (SWIFT_EXTENSION(FeedMe))
+SWIFT_CLASS("_TtC6FeedMe8MealView")
+@interface MealView : UIView
+@property (nonatomic) UIImageView * __nullable imageView;
+@property (nonatomic) UIButton * __nullable button;
+@property (nonatomic) Meal * __nullable meal;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame target:(id __nonnull)target selectorName:(SEL __null_unspecified)selectorName OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -179,16 +194,10 @@ SWIFT_CLASS("_TtC6FeedMe23MealTableViewController")
 
 
 @interface NSDate (SWIFT_EXTENSION(FeedMe))
+@end
 
-/// This adds a new method dateAt to NSDate.
-///
-/// It returns a new date at the specified hours and minutes of the receiver
-///
-/// \param hours: The hours value
-///
-/// \param minutes: The new minutes
-///
-/// \returns a new NSDate with the same year/month/day as the receiver, but with the specified hours/minutes values
+
+@interface NSDate (SWIFT_EXTENSION(FeedMe))
 - (NSDate * __nonnull)dateAtHours:(NSInteger)hours minutes:(NSInteger)minutes;
 @end
 
@@ -211,6 +220,7 @@ SWIFT_CLASS("_TtC6FeedMe14ViewController")
 - (void)setupScrollView;
 - (void)mealPageButtonAction;
 - (IBAction)eatAction:(id __nonnull)sender;
+- (void)jsonParsing;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

@@ -7,18 +7,16 @@
 //
 
 import UIKit
+enum mealTypes:Int {
+  case Breakfast = 1
+  case Lunch
+  case Dinner
+}
 
 class Meal: NSObject {
   
-  enum mealTypes:Int {
-    case Breakfast = 1
-    case Lunch
-    case Dinner
-  }
 
-  var name:String?
-  var info:String?
   var imageStr:String?
+  var mealId:String?
   var mealType:mealTypes?
-  
 }

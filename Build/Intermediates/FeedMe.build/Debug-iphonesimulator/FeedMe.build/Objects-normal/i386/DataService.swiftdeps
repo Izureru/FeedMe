@@ -4,22 +4,22 @@ provides:
 nominals:
 - "C6FeedMe11DataService"
 class-members:
-- "currentNumberSteps"
-- "parseJson"
-- "sharedInstance"
 - "checkTime"
+- "parseJson"
+- "currentNumberSteps"
+- "sharedInstance"
 - "getMeals"
 top-level:
-- "NSData"
-- "DataService"
-- "Int"
 - "NSObject"
+- "Int"
+- "DataService"
+- "NSData"
 - "Meal"
 member-access:
 - "CSo8NSObject"
-- !private "Sa"
 - "C6FeedMe11DataService"
 - "PSs9AnyObject"
+- !private "Sa"
 dynamic-lookup:
 cross-module:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/32/Swift.swiftmodule"
