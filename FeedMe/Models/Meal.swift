@@ -10,11 +10,15 @@ import UIKit
 
 class Meal: NSObject {
   
+  enum mealTypes:Int {
+    case Breakfast = 1
+    case Lunch
+    case Dinner
+  }
+
   var name:String?
   var info:String?
   var imageStr:String?
-  var mealType:Int?
-  
-  
+  var mealType:mealTypes?
   
 }

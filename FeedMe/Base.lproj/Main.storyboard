@@ -12,6 +12,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BY1-ur-khY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.26748017440589694" green="0.58564157196969702" blue="0.47617631636677105" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="X4J-so-tKD"/>
@@ -24,7 +29,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FeedMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="ViewController" customModule="FeedMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -33,35 +38,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naJ-sF-gip">
+                                <rect key="frame" x="0.0" y="250" width="600" height="300"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3Z-Cl-FM7">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <color key="backgroundColor" red="0.26748017439999999" green="0.585641572" blue="0.47617631640000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DYX-ME-N0j"/>
+                                </constraints>
+                                <state key="normal" title="Lets Eat">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="eatAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="prg-wC-vor"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRi-cH-0yi">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3cM-bw-RtW">
-                                        <rect key="frame" x="260" y="60" width="80" height="80"/>
+                                        <rect key="frame" x="260" y="85" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="TbB-8H-IGJ"/>
                                             <constraint firstAttribute="width" constant="80" id="bUZ-Mo-bsq"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epl-fF-lyA">
-                                        <rect key="frame" x="10" y="145" width="580" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVl-X3-29Y">
+                                        <rect key="frame" x="10" y="205" width="580" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVl-X3-29Y">
-                                        <rect key="frame" x="10" y="171" width="580" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epl-fF-lyA">
+                                        <rect key="frame" x="10" y="173" width="580" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="0Vq-x0-yFo"/>
+                                    <constraint firstAttribute="height" constant="250" id="0Vq-x0-yFo"/>
                                     <constraint firstItem="Epl-fF-lyA" firstAttribute="leading" secondItem="LRi-cH-0yi" secondAttribute="leading" constant="10" id="DFT-j8-TCd"/>
                                     <constraint firstAttribute="centerX" secondItem="3cM-bw-RtW" secondAttribute="centerX" id="FmO-PJ-4gr"/>
-                                    <constraint firstItem="vVl-X3-29Y" firstAttribute="top" secondItem="Epl-fF-lyA" secondAttribute="bottom" constant="5" id="O0e-CL-aYu"/>
+                                    <constraint firstItem="vVl-X3-29Y" firstAttribute="top" secondItem="Epl-fF-lyA" secondAttribute="bottom" constant="15" id="O0e-CL-aYu"/>
                                     <constraint firstAttribute="trailing" secondItem="vVl-X3-29Y" secondAttribute="trailing" constant="10" id="T1i-Ce-Gji"/>
                                     <constraint firstAttribute="trailing" secondItem="Epl-fF-lyA" secondAttribute="trailing" constant="10" id="aoO-5t-DDj"/>
                                     <constraint firstItem="Epl-fF-lyA" firstAttribute="top" secondItem="3cM-bw-RtW" secondAttribute="bottom" constant="5" id="jcN-ys-HPD"/>
@@ -69,23 +89,6 @@
                                     <constraint firstAttribute="centerY" secondItem="3cM-bw-RtW" secondAttribute="centerY" id="tFx-SB-g3p"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naJ-sF-gip">
-                                <rect key="frame" x="0.0" y="200" width="600" height="350"/>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3Z-Cl-FM7">
-                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="DYX-ME-N0j"/>
-                                </constraints>
-                                <state key="normal" title="Lets Eat">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="eatAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hhH-lZ-bDS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -108,7 +111,11 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="4Z4-12-tAC"/>
+                    <navigationItem key="navigationItem" id="4Z4-12-tAC">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="eCp-QY-Sno">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mealScrollView" destination="naJ-sF-gip" id="Cez-v7-vWn"/>
                         <outlet property="profileImageView" destination="3cM-bw-RtW" id="CFW-Cp-Ju9"/>
