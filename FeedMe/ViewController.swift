@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var stepsLabel: UILabel!
   @IBOutlet weak var mealScrollView: UIScrollView!
+  @IBOutlet weak var pagination: UIPageControl!
   var timer:NSTimer?
   var mealViews:[MealView] = [MealView]()
   var selectedMeal:Meal?
@@ -51,6 +52,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   func updateTime()
   {
     self.timeLabel.text = todaysDateString()
+    whatTimeIsIt()
   }
 
   override func didReceiveMemoryWarning() {
@@ -79,6 +81,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.mealViews.append(view)
         mealScrollView.addSubview(view)
     }
+    self.view.bringSubviewToFront(self.pagination)
   }
   
   func mealPageButtonAction(sender:AnyObject) {

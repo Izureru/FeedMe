@@ -24,6 +24,8 @@
 		94A5A4081B99D26B001289E3 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5A4071B99D26B001289E3 /* MealView.swift */; };
 		94A5A40E1B9A0FD1001289E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A5A40D1B9A0FD1001289E3 /* HealthKit.framework */; };
 		94A5A4101B9A1039001289E3 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5A40F1B9A1039001289E3 /* HealthKitHelper.swift */; };
+		94A5A4121BA2E52C001289E3 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5A4111BA2E52C001289E3 /* QuoteViewController.swift */; };
+		94A5A4131BA2E52C001289E3 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5A4111BA2E52C001289E3 /* QuoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,7 @@
 		94A5A40C1B9A0FD1001289E3 /* FeedMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FeedMe.entitlements; sourceTree = "<group>"; };
 		94A5A40D1B9A0FD1001289E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		94A5A40F1B9A1039001289E3 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthKitHelper.swift; path = Services/HealthKitHelper.swift; sourceTree = "<group>"; };
+		94A5A4111BA2E52C001289E3 /* QuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 				9473BBD81B98A279008E2D2E /* AppDelegate.swift */,
 				9473BBDA1B98A279008E2D2E /* ViewController.swift */,
 				9473BBFB1B999B3D008E2D2E /* MealTableViewController.swift */,
+				94A5A4111BA2E52C001289E3 /* QuoteViewController.swift */,
 				9473BBDC1B98A279008E2D2E /* Main.storyboard */,
 				9473BBDF1B98A279008E2D2E /* Images.xcassets */,
 				9473BBE11B98A279008E2D2E /* LaunchScreen.xib */,
@@ -306,6 +310,7 @@
 				94A5A4081B99D26B001289E3 /* MealView.swift in Sources */,
 				9473BBFC1B999B3D008E2D2E /* MealTableViewController.swift in Sources */,
 				9473BBD91B98A279008E2D2E /* AppDelegate.swift in Sources */,
+				94A5A4121BA2E52C001289E3 /* QuoteViewController.swift in Sources */,
 				94A5A4061B99CAA5001289E3 /* MealItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9473BBEF1B98A27A008E2D2E /* FeedMeTests.swift in Sources */,
+				94A5A4131BA2E52C001289E3 /* QuoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,24 +4,24 @@ provides:
 nominals:
 - "C6FeedMe21MealItemTableViewCell"
 class-members:
-- "infoTextView"
-- "MealItemImageView"
-- "TitleLabel"
 - "awakeFromNib"
-- "setSelected"
 - "NutritionLabel"
+- "infoTextView"
+- "setSelected"
+- "TitleLabel"
+- "MealItemImageView"
 top-level:
-- "UIImageView"
-- "UITableViewCell"
-- "UILabel"
 - "UITextView"
+- "UIImageView"
+- "UILabel"
 - "Bool"
+- "UITableViewCell"
 member-access:
-- "PSs9AnyObject"
-- "CSo6UIView"
-- "CSo8NSObject"
 - "C6FeedMe21MealItemTableViewCell"
 - "CSo15UITableViewCell"
+- "CSo6UIView"
+- "CSo8NSObject"
+- "PSs9AnyObject"
 - "CSo11UIResponder"
 dynamic-lookup:
 cross-module:

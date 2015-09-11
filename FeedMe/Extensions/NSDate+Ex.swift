@@ -78,6 +78,32 @@ public func >=(lhs: NSDate, rhs: NSDate) -> Bool
   return lhs.timeIntervalSince1970 >= rhs.timeIntervalSince1970
 }
 
+let now = NSDate()
+let breakfast_start_time = now.dateAt(hours:7, minutes: 0)
+let breakfast_end_time = now.dateAt(hours:10, minutes: 0)
+let lunch_start_time = now.dateAt(hours:11, minutes: 30)
+let lunch_end_time = now.dateAt(hours: 14, minutes: 0)
+let dinner_start_time = now.dateAt(hours:17, minutes: 00)
+let dinner_end_time = now.dateAt(hours:20, minutes: 0)
+
+public func whatTimeIsIt()->String {
+  var mealTime = ""
+  if now >= breakfast_start_time && now <= breakfast_end_time
+  {
+    mealTime = "BREAKFAST"
+    println("Time for \(mealTime)")
+  } else if now >= lunch_start_time &&  now <= lunch_end_time {
+    mealTime = "LUNCH"
+  } else if now >= dinner_start_time && now <= dinner_end_time{
+    mealTime = "DINNER"
+    }else {
+    mealTime = "WAITING"
+  }
+  println("Time for \(mealTime)")
+  return mealTime
+  
+}
+
 
 public func todaysDateString()->String{
 
@@ -85,7 +111,5 @@ public func todaysDateString()->String{
   dateFormatter.dateFormat = "hh:mm"
   let d = NSDate()
   return dateFormatter.stringFromDate(d)
-  
-
 }
 

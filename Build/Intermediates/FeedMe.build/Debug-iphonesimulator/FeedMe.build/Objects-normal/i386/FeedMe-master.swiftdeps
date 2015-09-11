@@ -1,6 +1,7 @@
 version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
-options: "579794b221c31b1d4d27ad6737c657b3"
+options: "675eaf018ffe7d7aa1f2cebb7b54df20"
 inputs: 
+- "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/Services/HealthKitHelper.swift"
 - "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/Models/Meal.swift"
 - "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/Cells/MealItemTableViewCell.swift"
 - "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/ViewController.swift"
@@ -9,4 +10,5 @@ inputs:
 - "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/Extensions/MealView.swift"
 - "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/MealTableViewController.swift"
 - "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/AppDelegate.swift"
+- "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/QuoteViewController.swift"
 - "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/Models/MealItem.swift"
