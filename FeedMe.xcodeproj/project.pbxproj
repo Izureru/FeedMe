@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3A6CF1991B99A40C001F32C7 /* NSDate+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6CF1981B99A40C001F32C7 /* NSDate+Ex.swift */; };
 		3ACFD2451B99A23B00A81C09 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFD2441B99A23B00A81C09 /* DataService.swift */; };
+		940275EF1BBE79890013C003 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940275EE1BBE79890013C003 /* SwiftyJSON.swift */; };
+		940275F01BBE79890013C003 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940275EE1BBE79890013C003 /* SwiftyJSON.swift */; };
+		940275F21BBE7B380013C003 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940275F11BBE7B380013C003 /* RestApiManager.swift */; };
+		940275F31BBE7B380013C003 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940275F11BBE7B380013C003 /* RestApiManager.swift */; };
 		9473BBD91B98A279008E2D2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473BBD81B98A279008E2D2E /* AppDelegate.swift */; };
 		9473BBDB1B98A279008E2D2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473BBDA1B98A279008E2D2E /* ViewController.swift */; };
 		9473BBDE1B98A279008E2D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9473BBDC1B98A279008E2D2E /* Main.storyboard */; };
@@ -41,6 +45,8 @@
 /* Begin PBXFileReference section */
 		3A6CF1981B99A40C001F32C7 /* NSDate+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+Ex.swift"; path = "Extensions/NSDate+Ex.swift"; sourceTree = "<group>"; };
 		3ACFD2441B99A23B00A81C09 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = Services/DataService.swift; sourceTree = "<group>"; };
+		940275EE1BBE79890013C003 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		940275F11BBE7B380013C003 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 		9473BBD31B98A279008E2D2E /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9473BBD71B98A279008E2D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9473BBD81B98A279008E2D2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				9473BBD71B98A279008E2D2E /* Info.plist */,
+				940275EE1BBE79890013C003 /* SwiftyJSON.swift */,
+				940275F11BBE7B380013C003 /* RestApiManager.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -304,6 +312,8 @@
 				94A5A4101B9A1039001289E3 /* HealthKitHelper.swift in Sources */,
 				9473BBFF1B99A02C008E2D2E /* Meal.swift in Sources */,
 				9473BBFA1B9999AA008E2D2E /* MealItemTableViewCell.swift in Sources */,
+				940275EF1BBE79890013C003 /* SwiftyJSON.swift in Sources */,
+				940275F21BBE7B380013C003 /* RestApiManager.swift in Sources */,
 				9473BBDB1B98A279008E2D2E /* ViewController.swift in Sources */,
 				3A6CF1991B99A40C001F32C7 /* NSDate+Ex.swift in Sources */,
 				3ACFD2451B99A23B00A81C09 /* DataService.swift in Sources */,
@@ -319,7 +329,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				940275F01BBE79890013C003 /* SwiftyJSON.swift in Sources */,
 				9473BBEF1B98A27A008E2D2E /* FeedMeTests.swift in Sources */,
+				940275F31BBE7B380013C003 /* RestApiManager.swift in Sources */,
 				94A5A4131BA2E52C001289E3 /* QuoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

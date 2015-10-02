@@ -42,6 +42,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     setupScrollView()
     jsonParsing()
+//    whatTimeIsIt()
 
   }
   
@@ -51,8 +52,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   
   func updateTime()
   {
-    self.timeLabel.text = todaysDateString()
     whatTimeIsIt()
+    self.timeLabel.text = whatTimeIsIt() + " " + todaysDateString()
   }
 
   override func didReceiveMemoryWarning() {
@@ -136,4 +137,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   }
 
 }
-
+func mealSuggest(){
+  
+}

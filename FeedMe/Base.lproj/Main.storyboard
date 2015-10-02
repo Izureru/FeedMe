@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XYY-Ed-kh5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XYY-Ed-kh5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -147,15 +147,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oO1-Zd-Fmr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oO1-Zd-Fmr">
                                 <rect key="frame" x="51" y="170" width="499" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1H-2c-iUO">
-                                <rect key="frame" x="126" y="345" width="348" height="30"/>
-                                <state key="normal" title="Tap Here">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1H-2c-iUO">
+                                <rect key="frame" x="126" y="562" width="348" height="30"/>
+                                <state key="normal" title="Let's Eat">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -167,10 +167,13 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="oO1-Zd-Fmr" secondAttribute="trailing" constant="50" id="06W-Wi-CCP"/>
                             <constraint firstItem="z1H-2c-iUO" firstAttribute="leading" secondItem="es9-Dt-dbI" secondAttribute="leadingMargin" constant="110" id="5Kg-k2-8OH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z1H-2c-iUO" secondAttribute="trailing" constant="110" id="HHK-qG-gdt"/>
                             <constraint firstItem="W95-pm-dw6" firstAttribute="top" secondItem="z1H-2c-iUO" secondAttribute="bottom" constant="225" id="Rs1-Z8-46Y"/>
+                            <constraint firstItem="z1H-2c-iUO" firstAttribute="leading" secondItem="es9-Dt-dbI" secondAttribute="leadingMargin" constant="110" id="T7m-5P-8Mb"/>
                             <constraint firstItem="oO1-Zd-Fmr" firstAttribute="leading" secondItem="es9-Dt-dbI" secondAttribute="leading" constant="51" id="nvu-Nx-uob"/>
                             <constraint firstItem="oO1-Zd-Fmr" firstAttribute="top" secondItem="A1M-6p-iaI" secondAttribute="bottom" constant="106" id="ph6-sX-4L3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="z1H-2c-iUO" secondAttribute="trailing" constant="110" id="w9k-OQ-iSr"/>
+                            <constraint firstItem="W95-pm-dw6" firstAttribute="top" secondItem="z1H-2c-iUO" secondAttribute="bottom" id="xqm-Oo-xmp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dhe-Jb-z4w"/>
