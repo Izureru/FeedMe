@@ -1,5 +1,0 @@
-version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
-options: "73d74955d88a60329784f0266875f270"
-inputs: 
-- "/Users/Izureru/dev/fitbit/FeedMe/FeedMeTests/FeedMeTests.swift"
-- "/Users/Izureru/dev/fitbit/FeedMe/FeedMe/QuoteViewController.swift"
