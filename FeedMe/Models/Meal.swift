@@ -9,8 +9,8 @@
 import UIKit
 enum mealTypes:Int {
   case Breakfast = 1
-  case Lunch
-  case Dinner
+  case Lunch = 2
+  case Dinner = 3
 }
 
 class Meal: NSObject {

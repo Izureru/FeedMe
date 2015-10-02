@@ -23,7 +23,6 @@ class MealTableViewController: UITableViewController {
           mealItems = mealItemsForId(jsonParsing(), mealId:mealid)
         }
       tableView.separatorInset = UIEdgeInsetsZero
-
       
       tableView.reloadData()
     }

@@ -19,6 +19,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   var timer:NSTimer?
   var mealViews:[MealView] = [MealView]()
   var selectedMeal:Meal?
+  var meals:[Meal]?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,9 +41,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
       timer?.fire()
     }
     
-    setupScrollView()
+    // parse all the json and get all meals which is breakfast
+    
     jsonParsing()
-//    whatTimeIsIt()
+    
+    
+    // set up scrollview, create meal views
+    setupScrollView()
 
   }
   
@@ -75,10 +80,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     clearScrolView()
 
     let width = self.view.frame.width
-    mealScrollView.contentSize = CGSizeMake(width * 3, 0)
-    for(var i = 0; i<3;i++){
+    var amount:CGFloat =     CGFloat(self.meals?.count ?? 0)
+    mealScrollView.contentSize = CGSizeMake(width * amount, 0)
+    for(var i = 0; i<self.meals?.count;i++){
         var view = MealView(frame: CGRectMake(width * CGFloat(i), 0, width, mealScrollView.bounds.height), target: self, selectorName: "mealPageButtonAction:")
+
         view.button?.tag = i
+      
+      if let meal = self.meals?[i]{
+        view.meal = meal
+        view.imageView?.image = UIImage(named: meal.imageStr!)
+      }
         self.mealViews.append(view)
         mealScrollView.addSubview(view)
     }
@@ -97,32 +109,20 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
   }
   
-  func jsonParsing()
-  {
+  func jsonParsing() {
     let path: NSString = NSBundle.mainBundle().pathForResource("meals", ofType: "json")!
     var data: NSData = NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped, error: nil)!
     var dict = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-  
+    
     if let returnDictionary = dict.valueForKey("meals") as? [[String:String]] {
+      var allMeals = DataService.sharedInstance.parseData(returnDictionary)
       
-      for (var i = 0 ; i < returnDictionary.count ;i++ )
-      {
-        var mealDictionary = returnDictionary[i]
-        var mealMeal = Meal()
-        mealMeal.mealId = mealDictionary["mealId"]
-        mealMeal.imageStr = mealDictionary["image"]
-   
-        if let mealNumber = mealDictionary["mealType"]?.toInt()
-        {
-          mealMeal.mealType = mealTypes(rawValue:mealNumber )
-        }
-        
-        mealViews[i].meal = mealMeal
-        mealViews[i].imageView?.image = UIImage(named: mealMeal.imageStr!)
-        
-      }
+      // generate a mealtime 
+      self.meals = DataService.sharedInstance.mealsForType(.Breakfast, data: allMeals)
     }
   }
+  
+
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     switch segue.identifier!{
@@ -136,7 +136,4 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
   }
 
-}
-func mealSuggest(){
-  
 }
