@@ -118,11 +118,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
       var allMeals = DataService.sharedInstance.parseData(returnDictionary)
       
       // generate a mealtime 
-      self.meals = DataService.sharedInstance.mealsForType(.Breakfast, data: allMeals)
+      if whatTimeIsIt() == "BREAKFAST" {self.meals = DataService.sharedInstance.mealsForType(.Breakfast, data: allMeals)}
+      else if whatTimeIsIt() == "LUNCH" {self.meals = DataService.sharedInstance.mealsForType(.Lunch, data: allMeals)}
+      else if whatTimeIsIt() == "DINNER" {self.meals = DataService.sharedInstance.mealsForType(.Dinner, data: allMeals)}
+      else {self.meals = DataService.sharedInstance.mealsForType(.Lunch, data: allMeals)}
     }
   }
-  
-
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     switch segue.identifier!{

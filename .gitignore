@@ -20,3 +20,5 @@ DerivedData
 Pods
 *~
 ._*
+*.xcuserstate
+project.xcworkspace/
