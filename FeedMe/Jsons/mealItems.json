@@ -1,59 +1,59 @@
 {
   "mealItems":
-    [
-     {
-        "image": "meal1a",
-        "title": "Sirloin Steaks",
-        "info": "calories: 1000, protein: 400kJ",
-        "mealId": "0001"
-      },
-      {
-        "image": "meal1b",
-        "title": "Pasta",
-        "info": "calories: 500, protein: 100kJ",
-        "mealId": "0001"
-      },
-      {
-		"image": "meal1c",
-		"title": "Prosecco",
-		"info": "calories: 250, protein: 50kJ",
-     "mealId": "0001"
-     },
-	{
-		"image": "meal2a",
-		"title": "Prawns",
-		"info": "calories: 500, protein: 200kJ",
-     "mealId": "0002"
-	},
-	{
-		"image": "meal2b",
-		"title": "Quinoa",
-		"info": "calories: 250, protein: 100kJ",
-     "mealId": "0002"
-	},
-	{
-		"image": "meal2c",
-		"title": "Water",
-		"info": "calories: 125, protein: 50kJ",
-     "mealId": "0002"
-	},
-	{
-		"image": "meal3a",
-		"title": "Chicken",
-		"info": "calories: 250, protein: 100kJ",
-     "mealId": "0003"
-	},
-	{
-		"image": "meal3b",
-		"title": "Rice",
-		"info": "calories: 125, protein: 50kJ",
-     "mealId": "0003"
-	},
-	{
-		"image": "meal3c",
-		"title": "Fruit Juice",
-		"info": "calories: 63, protein: 25kJ",
-     "mealId": "0003"
-	}
-      ]
+  [
+   {
+   "image": "meal1a",
+   "title": "Sirloin Steaks",
+   "info": "calories: 1000, fat: 1000, sugars: 1000, salt: 1000",
+   "mealId": "0001"
+   },
+   {
+   "image": "meal1b",
+   "title": "Pasta",
+   "info": "calories: 1000, fat: 1000, sugars: 1000, salt: 1000",
+   "mealId": "0001"
+   },
+   {
+   "image": "meal1c",
+   "title": "Prosecco",
+   "info": "calories: 1000, fat: 1000, sugars: 1000, salt: 1000",
+   "mealId": "0001"
+   },
+   {
+   "image": "meal2a",
+   "title": "Prawns",
+   "info": "calories: 2000, fat: 2000, sugars: 2000, salt: 2000",
+   "mealId": "0002"
+   },
+   {
+   "image": "meal2b",
+   "title": "Quinoa",
+   "info": "calories: 2000, fat: 2000, sugars: 2000, salt: 2000",
+   "mealId": "0002"
+   },
+   {
+   "image": "meal2c",
+   "title": "Water",
+   "info": "calories: 2000, fat: 2000, sugars: 2000, salt: 2000",
+   "mealId": "0002"
+   },
+   {
+   "image": "meal3a",
+   "title": "Chicken",
+   "info": "calories: 3000, fat: 3000, sugars: 3000, salt: 3000",
+   "mealId": "0003"
+   },
+   {
+   "image": "meal3b",
+   "title": "Rice",
+   "info": "calories: 3000, fat: 3000, sugars: 3000, salt: 3000",
+   "mealId": "0003"
+   },
+   {
+   "image": "meal3c",
+   "title": "Fruit Juice",
+   "info": "calories: 3000, fat: 3000, sugars: 3000, salt: 3000",
+   "mealId": "0003"
+   }
+   ]
 }

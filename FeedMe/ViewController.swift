@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var stepsLabel: UILabel!
   @IBOutlet weak var mealScrollView: UIScrollView!
+  @IBOutlet weak var pagination: UIPageControl!
   var timer:NSTimer?
   var mealViews:[MealView] = [MealView]()
   var selectedMeal:Meal?
@@ -27,7 +28,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     profileImageView.clipsToBounds = true
     self.timeLabel.text = todaysDateString()
 
-    self.stepsLabel.text = "Steps: " + String(stringInterpolationSegment: DataService.sharedInstance.currentNumberSteps())
+    HealthKit().recentSteps() { steps, error in
+      self.stepsLabel.text = "Steps: " + String(stringInterpolationSegment: steps)
+    }
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -39,6 +42,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     setupScrollView()
     jsonParsing()
+//    whatTimeIsIt()
 
   }
   
@@ -48,7 +52,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   
   func updateTime()
   {
-    self.timeLabel.text = todaysDateString()
+    whatTimeIsIt()
+    self.timeLabel.text = whatTimeIsIt() + " " + todaysDateString()
   }
 
   override func didReceiveMemoryWarning() {
@@ -77,6 +82,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.mealViews.append(view)
         mealScrollView.addSubview(view)
     }
+    self.view.bringSubviewToFront(self.pagination)
   }
   
   func mealPageButtonAction(sender:AnyObject) {
@@ -131,4 +137,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   }
 
 }
-
+func mealSuggest(){
+  
+}

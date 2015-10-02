@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XYY-Ed-kh5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XYY-Ed-kh5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -20,7 +20,7 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="X4J-so-tKD"/>
+                        <segue destination="456-pJ-MHu" kind="relationship" relationship="rootViewController" id="jQy-X4-TUZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="prY-Jp-eVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -41,6 +41,11 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naJ-sF-gip">
                                 <rect key="frame" x="0.0" y="250" width="600" height="300"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jYU-1C-pz2">
+                                        <rect key="frame" x="275" y="255" width="39" height="37"/>
+                                    </pageControl>
+                                </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3Z-Cl-FM7">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
@@ -48,7 +53,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DYX-ME-N0j"/>
                                 </constraints>
-                                <state key="normal" title="Lets Eat">
+                                <state key="normal" title="Swipe Above To See More Options">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -119,6 +124,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mealScrollView" destination="naJ-sF-gip" id="Cez-v7-vWn"/>
+                        <outlet property="pagination" destination="jYU-1C-pz2" id="Ul4-ky-m6l"/>
                         <outlet property="profileImageView" destination="3cM-bw-RtW" id="CFW-Cp-Ju9"/>
                         <outlet property="stepsLabel" destination="Epl-fF-lyA" id="K5w-rd-yBz"/>
                         <outlet property="timeLabel" destination="vVl-X3-29Y" id="i6t-xC-azL"/>
@@ -128,6 +134,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="156" y="436"/>
+        </scene>
+        <!--Quote View Controller-->
+        <scene sceneID="bBA-Im-tFP">
+            <objects>
+                <viewController id="456-pJ-MHu" customClass="QuoteViewController" customModule="FeedMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A1M-6p-iaI"/>
+                        <viewControllerLayoutGuide type="bottom" id="W95-pm-dw6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="es9-Dt-dbI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oO1-Zd-Fmr">
+                                <rect key="frame" x="51" y="170" width="499" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1H-2c-iUO">
+                                <rect key="frame" x="126" y="562" width="348" height="30"/>
+                                <state key="normal" title="Let's Eat">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="showDetail" id="zyN-W6-fBT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oO1-Zd-Fmr" secondAttribute="trailing" constant="50" id="06W-Wi-CCP"/>
+                            <constraint firstItem="z1H-2c-iUO" firstAttribute="leading" secondItem="es9-Dt-dbI" secondAttribute="leadingMargin" constant="110" id="5Kg-k2-8OH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z1H-2c-iUO" secondAttribute="trailing" constant="110" id="HHK-qG-gdt"/>
+                            <constraint firstItem="W95-pm-dw6" firstAttribute="top" secondItem="z1H-2c-iUO" secondAttribute="bottom" constant="225" id="Rs1-Z8-46Y"/>
+                            <constraint firstItem="z1H-2c-iUO" firstAttribute="leading" secondItem="es9-Dt-dbI" secondAttribute="leadingMargin" constant="110" id="T7m-5P-8Mb"/>
+                            <constraint firstItem="oO1-Zd-Fmr" firstAttribute="leading" secondItem="es9-Dt-dbI" secondAttribute="leading" constant="51" id="nvu-Nx-uob"/>
+                            <constraint firstItem="oO1-Zd-Fmr" firstAttribute="top" secondItem="A1M-6p-iaI" secondAttribute="bottom" constant="106" id="ph6-sX-4L3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z1H-2c-iUO" secondAttribute="trailing" constant="110" id="w9k-OQ-iSr"/>
+                            <constraint firstItem="W95-pm-dw6" firstAttribute="top" secondItem="z1H-2c-iUO" secondAttribute="bottom" id="xqm-Oo-xmp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dhe-Jb-z4w"/>
+                    <connections>
+                        <outlet property="QuoteLabel" destination="oO1-Zd-Fmr" id="YZM-eF-ygg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UWw-d1-arn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-533" y="1344"/>
         </scene>
         <!--Meal Table View Controller-->
         <scene sceneID="fdW-ht-Cah">
@@ -145,12 +201,6 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBt-fO-RKr" userLabel="TitleLabel">
                                             <rect key="frame" x="140" y="13" width="442" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colories" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYK-lk-fpU" userLabel="NutritionLabel">
-                                            <rect key="frame" x="140" y="44" width="450" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -179,14 +229,11 @@
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="cYK-lk-fpU" firstAttribute="leading" secondItem="MA4-mE-Pik" secondAttribute="trailing" constant="10" id="2Hl-ds-Ccp"/>
                                         <constraint firstItem="IYe-Gh-GJZ" firstAttribute="top" secondItem="MA4-mE-Pik" secondAttribute="bottom" id="8PK-DF-Oe5"/>
                                         <constraint firstItem="MA4-mE-Pik" firstAttribute="leading" secondItem="MH7-xB-RdC" secondAttribute="leading" id="AAN-xf-cNf"/>
                                         <constraint firstAttribute="trailing" secondItem="IYe-Gh-GJZ" secondAttribute="trailing" constant="10" id="LlQ-nM-OTf"/>
-                                        <constraint firstAttribute="trailing" secondItem="cYK-lk-fpU" secondAttribute="trailing" constant="10" id="aD1-hh-Kti"/>
                                         <constraint firstItem="eBt-fO-RKr" firstAttribute="leading" secondItem="MA4-mE-Pik" secondAttribute="trailing" constant="10" id="dDj-qX-lla"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="eBt-fO-RKr" secondAttribute="trailing" constant="10" id="dhf-sq-57O"/>
-                                        <constraint firstItem="cYK-lk-fpU" firstAttribute="top" secondItem="eBt-fO-RKr" secondAttribute="bottom" constant="10" id="fOP-IH-heZ"/>
                                         <constraint firstItem="MA4-mE-Pik" firstAttribute="top" secondItem="MH7-xB-RdC" secondAttribute="top" id="gY6-NR-Bzq"/>
                                         <constraint firstItem="eBt-fO-RKr" firstAttribute="top" secondItem="MH7-xB-RdC" secondAttribute="topMargin" constant="5" id="odh-z6-yZl"/>
                                         <constraint firstAttribute="bottom" secondItem="IYe-Gh-GJZ" secondAttribute="bottom" id="sHS-q9-lG5"/>
@@ -195,7 +242,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="MealItemImageView" destination="MA4-mE-Pik" id="V8n-NP-u7l"/>
-                                    <outlet property="NutritionLabel" destination="cYK-lk-fpU" id="flc-f8-Ioj"/>
                                     <outlet property="TitleLabel" destination="eBt-fO-RKr" id="iWJ-3X-oFZ"/>
                                     <outlet property="infoTextView" destination="IYe-Gh-GJZ" id="RbY-xZ-RDz"/>
                                 </connections>
