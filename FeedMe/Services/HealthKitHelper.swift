@@ -11,11 +11,16 @@ import HealthKit
 
 
 let calendar = NSCalendar.currentCalendar()
+let today = NSDate()
+let yesterday = today.dateByAddingTimeInterval(-24 * 60 * 60)
 
 class HealthKit {
    let storage = HKHealthStore()
-   let yesterday = calendar.dateByAddingUnit(.CalendarUnitDay, value: -1, toDate: NSDate(), options: nil)
-  
+
+//  let yesterday = calendar.components([calendar.Day], value: -1, toDate: NSDate(), options: nil)
+//  let yesterday = today.dateByAddingTimeInterval(-24 * 60 * 60)
+//   let yesterday = calendar.dateByAddingUnit(calendar.Day, value: -1, toDate: NSDate(), options: nil)
+//  let twoDaysAgo = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: -2, toDate: NSDate(), options: nil)
     init()
     {
       checkAuthorization()
@@ -26,9 +31,9 @@ class HealthKit {
     
     if HKHealthStore.isHealthDataAvailable()
     {
-      let steps = NSSet(object: HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount))
+      let steps = NSSet(object: HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
       
-      storage.requestAuthorizationToShareTypes(nil, readTypes: steps as Set<NSObject>) {(success, error) -> Void in
+      storage.requestAuthorizationToShareTypes(nil, readTypes: steps as? Set<HKObjectType>) {(success, error) -> Void in
         isEnabled = success
       }
     }else{
@@ -42,7 +47,7 @@ class HealthKit {
     
     let predicate = HKQuery.predicateForSamplesWithStartDate(yesterday, endDate: NSDate(), options: .None)
     
-    let query = HKSampleQuery(sampleType: type, predicate: predicate, limit: 0, sortDescriptors: nil) { query, results, error in
+    let query = HKSampleQuery(sampleType: type!, predicate: predicate, limit: 0, sortDescriptors: nil) { query, results, error in
       var steps:Double = 0
       
       if results?.count > 0 {

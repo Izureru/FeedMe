@@ -27,7 +27,7 @@ class RestApiManager: NSObject {
     let request = NSMutableURLRequest(URL: NSURL(string: path)!)
     request.HTTPMethod = "GET"
     NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-      let json:JSON = JSON(data: data)
+      let json:JSON = JSON(data: data!)
       onCompletion(json, error)
 
     }

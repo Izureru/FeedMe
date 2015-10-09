@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XYY-Ed-kh5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XYY-Ed-kh5">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -39,7 +40,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naJ-sF-gip">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naJ-sF-gip">
                                 <rect key="frame" x="0.0" y="250" width="600" height="300"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jYU-1C-pz2">
@@ -172,8 +173,6 @@
                             <constraint firstItem="z1H-2c-iUO" firstAttribute="leading" secondItem="es9-Dt-dbI" secondAttribute="leadingMargin" constant="110" id="T7m-5P-8Mb"/>
                             <constraint firstItem="oO1-Zd-Fmr" firstAttribute="leading" secondItem="es9-Dt-dbI" secondAttribute="leading" constant="51" id="nvu-Nx-uob"/>
                             <constraint firstItem="oO1-Zd-Fmr" firstAttribute="top" secondItem="A1M-6p-iaI" secondAttribute="bottom" constant="106" id="ph6-sX-4L3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="z1H-2c-iUO" secondAttribute="trailing" constant="110" id="w9k-OQ-iSr"/>
-                            <constraint firstItem="W95-pm-dw6" firstAttribute="top" secondItem="z1H-2c-iUO" secondAttribute="bottom" id="xqm-Oo-xmp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dhe-Jb-z4w"/>
@@ -195,8 +194,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="mealItemCell" rowHeight="270" id="YZv-wl-lbv" customClass="MealItemTableViewCell" customModule="FeedMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="22" width="600" height="270"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YZv-wl-lbv" id="MH7-xB-RdC">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="269"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBt-fO-RKr" userLabel="TitleLabel">

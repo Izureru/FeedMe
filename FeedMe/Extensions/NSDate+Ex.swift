@@ -12,6 +12,8 @@ import UIKit
 
 //-------------------------------------------------------------
 //NSDate extensions.
+
+
 extension NSDate
 {
   /**
@@ -24,21 +26,17 @@ extension NSDate
   
   :returns: a new NSDate with the same year/month/day as the receiver, but with the specified hours/minutes values
   */
-  func dateAt(#hours: Int, minutes: Int) -> NSDate
+  func dateAt(hours hours: Int, minutes: Int) -> NSDate
   {
-    let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+
+    let calendar = NSCalendar.currentCalendar()
     
     //get the month/day/year componentsfor today's date.
     
-    println("Now = \(self)")
+    print("Now = \(self)")
     
-    let date_components = calendar.components(
-      NSCalendarUnit.CalendarUnitYear |
-        NSCalendarUnit.CalendarUnitMonth |
-        NSCalendarUnit.CalendarUnitDay,
-      fromDate: self)
+    let date_components = calendar.components([.Hour, .Minute, .Second, .Nanosecond], fromDate: NSDate())
     
-    //Create an NSDate for 8:00 AM today.
     date_components.hour = hours
     date_components.minute = minutes
     date_components.second = 0
@@ -49,7 +47,6 @@ extension NSDate
 }
 //-------------------------------------------------------------
 //Tell the system that NSDates can be compared with ==, >, >=, <, and <= operators
-extension NSDate: Equatable {}
 extension NSDate: Comparable {}
 
 //-------------------------------------------------------------
@@ -91,7 +88,7 @@ public func whatTimeIsIt()->String {
   if now >= breakfast_start_time && now <= breakfast_end_time
   {
     mealTime = "BREAKFAST"
-    println("Time for \(mealTime)")
+    print("Time for \(mealTime)")
   } else if now >= lunch_start_time &&  now <= lunch_end_time {
     mealTime = "LUNCH"
   } else if now >= dinner_start_time && now <= dinner_end_time{
@@ -99,7 +96,7 @@ public func whatTimeIsIt()->String {
     }else {
     mealTime = "WAITING"
   }
-  println("Time for \(mealTime)")
+  print("Time for \(mealTime)")
   return mealTime
   
 }
@@ -107,7 +104,7 @@ public func whatTimeIsIt()->String {
 
 public func todaysDateString()->String{
 
-  var dateFormatter = NSDateFormatter()
+  let dateFormatter = NSDateFormatter()
   dateFormatter.dateFormat = "hh:mm"
   let d = NSDate()
   return dateFormatter.stringFromDate(d)

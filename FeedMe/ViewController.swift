@@ -80,10 +80,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     clearScrolView()
 
     let width = self.view.frame.width
-    var amount:CGFloat =     CGFloat(self.meals?.count ?? 0)
+    let amount:CGFloat =     CGFloat(self.meals?.count ?? 0)
     mealScrollView.contentSize = CGSizeMake(width * amount, 0)
     for(var i = 0; i<self.meals?.count;i++){
-        var view = MealView(frame: CGRectMake(width * CGFloat(i), 0, width, mealScrollView.bounds.height), target: self, selectorName: "mealPageButtonAction:")
+        let view = MealView(frame: CGRectMake(width * CGFloat(i), 0, width, mealScrollView.bounds.height), target: self, selectorName: "mealPageButtonAction:")
 
         view.button?.tag = i
       
@@ -105,17 +105,32 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   
   @IBAction func eatAction(sender: AnyObject) {
    
-    var page = mealScrollView.contentOffset.x / mealScrollView.frame.size.width
+    _ = mealScrollView.contentOffset.x / mealScrollView.frame.size.width
 
   }
   
   func jsonParsing() {
     let path: NSString = NSBundle.mainBundle().pathForResource("meals", ofType: "json")!
-    var data: NSData = NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped, error: nil)!
-    var dict = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
+    var data:NSData? = nil
+    var dict:NSDictionary? = nil
+    do{
+          data = try NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped)
+    }
+    catch {
+      print("Handle \(error) here")
+    }
+
     
-    if let returnDictionary = dict.valueForKey("meals") as? [[String:String]] {
-      var allMeals = DataService.sharedInstance.parseData(returnDictionary)
+    
+    do{
+      dict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
+    }
+    catch {
+      print("Handle \(error) here")
+    }
+
+    if let returnDictionary = dict!.valueForKey("meals") as? [[String:String]] {
+      let allMeals = DataService.sharedInstance.parseData(returnDictionary)
       
       // generate a mealtime 
       if whatTimeIsIt() == "BREAKFAST" {self.meals = DataService.sharedInstance.mealsForType(.Breakfast, data: allMeals)}
@@ -128,12 +143,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     switch segue.identifier!{
     case "eatingSegue":
-        println("eating segueeeeee")
-        var mealTBV = segue.destinationViewController as! MealTableViewController
+        print("eating segueeeeee")
+        let mealTBV = segue.destinationViewController as! MealTableViewController
         mealTBV.meal = selectedMeal
 
     default:
-      println("HAHAHAHAHAH")
+      print("HAHAHAHAHAH")
     }
   }
 

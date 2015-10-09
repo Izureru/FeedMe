@@ -28,7 +28,7 @@ class MealTableViewController: UITableViewController {
     }
   
     override func viewWillAppear(animated: Bool) {
-      println(meal)
+      print(meal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +55,7 @@ class MealTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("mealItemCell", forIndexPath: indexPath) as! MealItemTableViewCell
       cell.layoutMargins = UIEdgeInsetsZero;
       cell.preservesSuperviewLayoutMargins = false;
-      var item = self.mealItems![indexPath.row]
+      let item = self.mealItems![indexPath.row]
       
           cell.MealItemImageView?.image = UIImage(named: item.imageStr!)
           cell.TitleLabel.text = item.name
@@ -102,28 +102,43 @@ class MealTableViewController: UITableViewController {
   {
     var array:[MealItem] = [MealItem]()
     let path: NSString = NSBundle.mainBundle().pathForResource("mealItems", ofType: "json")!
-    var data: NSData = NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped, error: nil)!
-    var dict = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
     
-    if let returnDictionary = dict.valueForKey("mealItems") as? [[String:String]] {
-      
-      for (var i = 0 ; i < returnDictionary.count ;i++ )
-      {
-        var mealDictionary = returnDictionary[i]
-        var mealMeal = MealItem()
-        
-        // TODO: ensure all json array name match the mealItem object attributes
-        
-        mealMeal.mealId = mealDictionary["mealId"]
-        mealMeal.name = mealDictionary["title"]
-        mealMeal.info = mealDictionary["info"]
-        mealMeal.imageStr = mealDictionary["image"]
-        
-        array.append(mealMeal)
-      }
-      
+    var optData:NSData? = nil
+    do {
+      optData = try NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMappedIfSafe)
     }
-    return array
+    catch {
+      print("Handle \(error) here")
+    }
+    
+    if let data = optData {
+      
+      do{
+      let dict = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+        
+      if let returnDictionary = dict.valueForKey("mealItems") as? [[String:String]] {
+        for (var i = 0 ; i < returnDictionary.count ;i++ )
+        {
+          var mealDictionary = returnDictionary[i]
+          let mealMeal = MealItem()
+          
+          // TODO: ensure all json array name match the mealItem object attributes
+          
+          mealMeal.mealId = mealDictionary["mealId"]
+          mealMeal.name = mealDictionary["title"]
+          mealMeal.info = mealDictionary["info"]
+          mealMeal.imageStr = mealDictionary["image"]
+          
+          array.append(mealMeal)
+        }
+        }
+        
+        
+      } catch {
+        print(error)
+      }
+
+    }; return array
   }
   
   func mealItemsForId(items:[MealItem], mealId:String)->[MealItem]{

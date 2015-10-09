@@ -12,12 +12,12 @@ class DataService: NSObject {
   static let sharedInstance = DataService()
 
   func getMeals(steps:Int) -> [Meal]{
-    var meals = [Meal]()
+    let meals = [Meal]()
     return meals
   }
   
   func parseJson(JsonData:NSData) ->[Meal]{
-    var meals = [Meal]()
+    let meals = [Meal]()
     return meals
   }
   
@@ -47,7 +47,7 @@ class DataService: NSObject {
   
   func currentNumberSteps()->Int{
     
-    var steps = Int(arc4random_uniform(10000))
+    let steps = Int(arc4random_uniform(10000))
     return steps
   }
   
@@ -57,11 +57,11 @@ class DataService: NSObject {
       for (var i = 0 ; i < dict.count ;i++ )
       {
         var mealDictionary = dict[i]
-        var mealMeal = Meal()
+        let mealMeal = Meal()
         mealMeal.mealId = mealDictionary["mealId"]
         mealMeal.imageStr = mealDictionary["image"]
         
-        if let mealNumber = mealDictionary["mealType"]?.toInt()
+        if let mealNumber = Int(mealDictionary["mealType"]!)
         {
           mealMeal.mealType = mealTypes(rawValue:mealNumber )
         }
