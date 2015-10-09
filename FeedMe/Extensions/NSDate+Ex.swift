@@ -28,14 +28,14 @@ extension NSDate
   */
   func dateAt(hours hours: Int, minutes: Int) -> NSDate
   {
-
-    let calendar = NSCalendar.currentCalendar()
+    let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+//    let calendar = NSCalendar.currentCalendar()
     
     //get the month/day/year componentsfor today's date.
     
     print("Now = \(self)")
     
-    let date_components = calendar.components([.Hour, .Minute, .Second, .Nanosecond], fromDate: NSDate())
+    let date_components = calendar.components([.Year, .Month, .Day, .Hour, .Minute, .Second, .Nanosecond], fromDate: self)
     
     date_components.hour = hours
     date_components.minute = minutes
@@ -88,7 +88,6 @@ public func whatTimeIsIt()->String {
   if now >= breakfast_start_time && now <= breakfast_end_time
   {
     mealTime = "BREAKFAST"
-    print("Time for \(mealTime)")
   } else if now >= lunch_start_time &&  now <= lunch_end_time {
     mealTime = "LUNCH"
   } else if now >= dinner_start_time && now <= dinner_end_time{
@@ -98,12 +97,9 @@ public func whatTimeIsIt()->String {
   }
   print("Time for \(mealTime)")
   return mealTime
-  
 }
 
-
 public func todaysDateString()->String{
-
   let dateFormatter = NSDateFormatter()
   dateFormatter.dateFormat = "hh:mm"
   let d = NSDate()
